@@ -13,7 +13,7 @@
 * build with Ruby 2.3
 
 ```
-docker build -t my-apps github.com/maxivak/docker-ruby-apps.git/ruby23
+docker build -t my-apps github.com/maxivak/docker-ruby-apps.git#master:ruby23
 ```
 
 

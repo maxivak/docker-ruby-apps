@@ -10,11 +10,22 @@
 
 * build from github
 
+
+## Ruby 2.3
 * build with Ruby 2.3
 
 ```
 docker build -t my-apps github.com/maxivak/docker-ruby-apps.git#master:ruby23
 ```
+
+## Ruby 2.2
+
+* build with Ruby 2.2
+
+```
+docker build -t my-apps github.com/maxivak/docker-ruby-apps.git#master:ruby22
+```
+
 
 
 # Run

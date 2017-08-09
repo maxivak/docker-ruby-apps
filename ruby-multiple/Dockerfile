@@ -1,0 +1,50 @@
+FROM phusion/passenger-full:0.9.20
+
+# Set correct environment variables.
+#ENV HOME /root
+
+
+#
+ENV TERM xterm
+#RUN export TERM=xterm
+
+
+# base packages
+RUN apt-get update
+RUN apt-get -y install iputils-ping
+
+# ruby
+#RUN /pd_build/ruby-2.2.*.sh
+#RUN /pd_build/ruby-2.4.*.sh
+
+
+
+# setpwd
+#RUN echo 'root:pass' | chpasswd
+#RUN echo 'app:pass' | chpasswd
+
+
+# ssh
+RUN rm -f /etc/service/sshd/down
+
+ADD files/sshd_config /etc/ssh/sshd_config
+
+RUN chown root:root /var/run/sshd && chmod 700 /var/run/sshd
+
+
+# nginx
+RUN rm -f /etc/service/nginx/down
+
+
+# apps
+RUN mkdir -p /home/app/apps
+
+# nginx apps
+#RUN rm /etc/nginx/sites-enabled/default
+
+#COPY files/sites/ /etc/nginx/sites-enabled/
+
+
+
+# Clean up APT when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

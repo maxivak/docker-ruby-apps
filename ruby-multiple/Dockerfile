@@ -37,6 +37,8 @@ RUN rm -f /etc/service/nginx/down
 
 
 # apps
+USER app
+
 RUN mkdir -p /home/app/apps
 
 # nginx apps

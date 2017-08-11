@@ -10,8 +10,13 @@
 
 * build from github
 
+```
+docker build -t my-apps github.com/maxivak/docker-ruby-apps.git#master:version
+```
+
 
 ## Ruby 2.3
+
 * build with Ruby 2.3
 
 ```
@@ -26,6 +31,18 @@ docker build -t my-apps github.com/maxivak/docker-ruby-apps.git#master:ruby23
 docker build -t my-apps github.com/maxivak/docker-ruby-apps.git#master:ruby22
 ```
 
+
+## Multiple rubuies
+
+* includes Rubies: 2.2.4, 2.3.5, 2.4.0
+
+* based on phusion/passenger-full:0.9.20
+
+* build
+
+```
+docker build -t my-apps github.com/maxivak/docker-ruby-apps.git#master:ruby-multiple
+```
 
 
 # Run

@@ -8,7 +8,7 @@ ENV TERM xterm
 
 # base packages
 RUN apt-get update
-RUN apt-get -y install iputils-ping
+RUN apt-get -y install wget iputils-ping
 
 
 # setpwd

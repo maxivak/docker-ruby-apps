@@ -11,7 +11,7 @@ ENV TERM xterm
 
 # base packages
 RUN apt-get update
-RUN apt-get -y install iputils-ping
+RUN apt-get -y wget install iputils-ping
 
 # ruby
 #RUN /pd_build/ruby-2.2.*.sh

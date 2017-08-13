@@ -2,7 +2,9 @@
 
 * based on https://github.com/phusion/passenger-docker
 
-* Nginx, Passenger, SSH server
+Image contents:
+* Nginx, Passenger
+* SSH server
 
 
 

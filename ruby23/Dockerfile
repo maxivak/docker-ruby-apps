@@ -27,6 +27,10 @@ RUN chown root:root /var/run/sshd && chmod 700 /var/run/sshd
 # nginx
 RUN rm -f /etc/service/nginx/down
 
+# libs
+RUN apt-get update
+RUN apt-get -y install imagemagick
+
 
 # apps
 RUN mkdir -p /home/app/apps
@@ -39,3 +43,9 @@ RUN mkdir -p /home/app/apps
 # debug
 #RUN touch /home/app/myapp/public/1.html
 #RUN echo "hello" > /home/app/myapp/public/1.html
+
+
+
+# Clean up APT when done.
+USER root
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

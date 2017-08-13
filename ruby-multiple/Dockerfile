@@ -35,6 +35,10 @@ RUN chown root:root /var/run/sshd && chmod 700 /var/run/sshd
 # nginx
 RUN rm -f /etc/service/nginx/down
 
+# libs
+RUN apt-get update
+RUN apt-get -y install imagemagick
+
 
 # apps
 USER app

@@ -27,6 +27,14 @@ RUN chown root:root /var/run/sshd && chmod 700 /var/run/sshd
 # nginx
 RUN rm -f /etc/service/nginx/down
 
+# nodejs
+RUN apt-get update
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get -y install nodejs
+RUN apt-get -y install yarn
+
+
+
 # libs
 RUN apt-get update
 RUN apt-get -y install imagemagick

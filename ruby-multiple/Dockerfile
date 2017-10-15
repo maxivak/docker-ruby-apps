@@ -51,6 +51,9 @@ RUN apt-get -y install yarn
 RUN apt-get update
 RUN apt-get -y install imagemagick
 
+# mysql
+RUN apt-get -y install mysql-client libmysqlclient-dev
+
 
 # apps
 USER app

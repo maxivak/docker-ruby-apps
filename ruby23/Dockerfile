@@ -7,7 +7,7 @@ ENV TERM xterm
 
 
 # base packages
-RUN apt-get update
+RUN apt-get update --fix-missing
 RUN apt-get -y install wget iputils-ping rsync
 
 

@@ -4,7 +4,7 @@ ADD files-passenger-docker /pd_build
 
 
 # ruby 2.4.2
-#RUN /pd_build/ruby-2.4.2.sh
+RUN /pd_build/ruby-2.4.2.sh
 
 
 # Set correct environment variables.

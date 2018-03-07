@@ -43,9 +43,15 @@ RUN chown root:root /var/run/sshd && chmod 700 /var/run/sshd
 RUN rm -f /etc/service/nginx/down
 
 # nodejs
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt-get update
-RUN apt-get -y install nodejs
+# node v8 (LTS)
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get install -y nodejs
+
+
+# node 6
+#RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+#RUN apt-get update
+#RUN apt-get -y install nodejs
 
 # yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -

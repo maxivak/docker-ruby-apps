@@ -1,10 +1,10 @@
-FROM phusion/passenger-full:0.9.20
+FROM phusion/passenger-full:1.0.1
 
-ADD files-passenger-docker /pd_build
+#ADD files-passenger-docker /pd_build
 
 
-# ruby 2.4.2
-RUN /pd_build/ruby-2.4.2.sh
+# ruby 2.4.5
+#RUN /pd_build/ruby-2.4.*.sh
 
 
 # Set correct environment variables.
@@ -18,11 +18,9 @@ ENV TERM xterm
 
 # base packages
 RUN apt-get update --fix-missing
-RUN apt-get -y install wget iputils-ping rsync
+RUN apt-get install -y  --no-install-recommends wget iputils-ping rsync
 
-# ruby
-#RUN /pd_build/ruby-2.2.*.sh
-#RUN /pd_build/ruby-2.4.*.sh
+
 
 
 
@@ -56,16 +54,16 @@ RUN apt-get install -y nodejs
 # yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update
-RUN apt-get -y install yarn
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends yarn
 
 
 # libs
-RUN apt-get update
-RUN apt-get -y install imagemagick
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends imagemagick
 
 # mysql
-RUN apt-get -y install mysql-client libmysqlclient-dev
+RUN apt-get install -y --no-install-recommends mysql-client libmysqlclient-dev
 
 
 # apps

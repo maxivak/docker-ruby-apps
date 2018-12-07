@@ -36,9 +36,9 @@ docker build -t my-apps github.com/maxivak/docker-ruby-apps.git#master:ruby22
 
 ## Multiple rubies
 
-* includes Rubies: 2.2.4, 2.3.5, 2.4.2
+* includes Rubies: 2.3.8, 2.4.5, 2.5.3
 
-* based on phusion/passenger-full:0.9.26
+* based on phusion/passenger-full:1.0.1
 
 * build
 

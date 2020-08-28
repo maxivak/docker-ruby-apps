@@ -16,6 +16,19 @@ Image contents:
 docker build -t my-apps github.com/maxivak/docker-ruby-apps.git#master:version
 ```
 
+## ruby 2.6
+
+* build with Ruby 2.5.3
+
+```
+docker build -t my-apps github.com/maxivak/docker-ruby-apps.git#master:ruby26
+```
+
+contents:
+* ruby 2.6
+* node 12
+
+
 ## Ruby 2.5
 
 
